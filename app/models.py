@@ -51,6 +51,9 @@ class Application(Base):
     __tablename__ = "applications"
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     user_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.id"))
+    client_name: Mapped[str] = mapped_column(String, nullable=False)
+    client_phone: Mapped[str] = mapped_column(String, nullable=False)
+    client_email: Mapped[str] = mapped_column(String, nullable=False)
     client_comment: Mapped[str] = mapped_column(String, nullable=True)
     status_label: Mapped[str] = mapped_column(String, nullable=False, default="worker not assigned")
     status_description: Mapped[str] = mapped_column(String, nullable=True)
