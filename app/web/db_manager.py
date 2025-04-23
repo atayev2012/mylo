@@ -5,7 +5,7 @@ from app.database import async_session_maker
 
 from app.models import (
     Project, Image, Tag, ProjectTag, User, Application,
-    ServiceType,  ClientType, BudgetType, DeadlineType
+    ServiceType,  ClientType, BudgetType, DeadlineType, Image
 )
 
 
@@ -128,7 +128,7 @@ class ProjectDBM(BaseDBM):
                         "tags": tag_names,
                         "cover": item.cover,
                         "imgs": [image.image_url for image in item.images],
-                        "tasks": item.task,
+                        "task": item.task,
                         "done": item.done,
                         "price": item.price
                     }
