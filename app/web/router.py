@@ -106,7 +106,7 @@ async def get_projects(project_id: int | None = None):
             "tags": tags,
             "cover": project.cover,
             "imgs": images,
-            "tasks": project.task,
+            "task": project.task,
             "done": project.done,
             "price": project.price
         }
